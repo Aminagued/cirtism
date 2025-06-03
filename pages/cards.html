@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cirtism - Discover the World</title>
+    <link rel="icon" href="../images/icon.ico" type="image/ico" />
+    <link rel="stylesheet" href="/projects/cirtism/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        max-width: 100%;
+        padding: 20px;
+        gap: 30px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+      }
+
+      .picture-container {
+        position: relative;
+        padding: 20px;
+        width: 700px;
+        height: 500px;
+      }
+
+      .picture {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .color-circles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .color-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 3px solid white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s;
+      }
+
+      .color-circle:hover {
+        transform: scale(1.1);
+      }
+
+      .info-display {
+        width: 500px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .description {
+        width: 500px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 2;
+      }
+
+      .info-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .marker {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: white;
+        border-radius: 50%;
+        border: 2px solid black;
+        transform: translate(-50%, -50%);
+      }
+      .cards-container {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        flex-direction: row;
+      }
+      .card-title {
+        width: 200px;
+        height: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        background-color: #92561a;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      .cards-container a {
+        text-decoration: none;
+        color: white;
+      }
+      .card-title:hover {
+        background-color: #f79400;
+        transition: width 0.3s ease;
+      }
+      footer {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <a href="#" class="logo"
+        ><i class="fas fa-globe-americas"></i>Cirt<span>ism</span></a
+      >
+      <div class="navigation-other">
+        <a href="../index.html">Home</a>
+        <a href="GalleryImages.html">Destinations</a>
+        <a href="../index.html #videos">Videos</a>
+        <a href="culture.html">Culture</a>
+        <a href="cards.html">Cards</a>
+        <a href="visit.html">Visit</a>
+        <a href="../index.html #testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </header>
+    <section class="destinations" id="destinations">
+      <div class="section-title">
+        <h2>Cirta Cards</h2>
+        <p>
+          Explore Cirta through art, traditions, and stories! Culture Corner is
+          your gateway to vibrant images,.
+        </p>
+      </div>
+      <div class="cards-container">
+        <div class="card-title">
+          <a href="#card1"><h2>Card 01</h2></a>
+        </div>
+        <div class="card-title">
+          <a href="#card2"><h2>Card 02</h2></a>
+        </div>
+        <div class="card-title">
+          <a href="#card3"><h2>Card 03</h2></a>
+        </div>
+      </div>
+      <div id="card1"><h2>Card 01</h2></div>
+      <div class="container">
+        <div class="picture-container">
+          <img
+            src="../images/cards/1.jpg"
+            alt="Sample Landscape"
+            class="picture"
+          />
+          <!-- Markers will be added by JavaScript -->
+        </div>
+
+        <div class="color-circles">
+          <div
+            class="color-circle"
+            style="background-color: #ff5733"
+            data-info="red-info"
+            data-position="20% 30%"
+          ></div>
+          <div
+            class="color-circle"
+            style="background-color: #ffb833"
+            data-info="orange-info"
+            data-position="70% 20%"
+          ></div>
+          <div
+            class="color-circle"
+            style="background-color: #55ff33"
+            data-info="green-info"
+            data-position="50% 50%"
+          ></div>
+          <div
+            class="color-circle"
+            style="background-color: #ebff33"
+            data-info="yellow-info"
+            data-position="30% 70%"
+          ></div>
+          <div
+            class="color-circle"
+            style="background-color: #5833ff"
+            data-info="blue-info"
+            data-position="30% 70%"
+          ></div>
+        </div>
+
+        <div class="info-display">
+          <div id="default-info">
+            <div class="info-title">Welcome!</div>
+            <div>
+              Click on any colored circle to see information about that part of
+              the picture.
+            </div>
+          </div>
+
+          <div id="red-info" class="hidden">
+            <div class="info-title">Artisanal Trail:</div>
+            <div>
+              This trail, which takes 48 minutes on foot, covers two and a half
+              kilometers (2.411 km). Departure/Arrival: Mellah Slimane/Bardo
+              Footbridge Stopovers: Tatache Square, La Brèche
+            </div>
+            <div class="info-title">Places to Visit:</div>
+            <div>
+              Mellah Slimane Footbridge, the Medersa, Fonduk Ezzyt where
+              handicrafts are exhibited (embroidery and brassware), the Sidi
+              Lakhdar Mosque, Rahbat Essouf, the commercial heart of the city,
+              traditional pasta production in the Bachtarzi impasse, the Sidi
+              Djeliss square and mausoleum, Zaouïa Abd el-Rahman, Souk el-Aser,
+              residence of Salah Bey, El Kettani Mosque and Medersa housing the
+              tomb of Salah Bey and his family, Dar el Imam, Bey's Palace,
+              Hassan Bey Mosque, El Khalifa Cultural Center housing a permanent
+              exhibition of books, handicrafts (brassware, confectionery,
+              embroidery, pottery, jewelry, etc.), Bardo Brasseries where
+              workshops are lined up on several streets opening its doors to the
+              public and tourists.
+            </div>
+          </div>
+
+          <div id="orange-info" class="hidden">
+            <div class="info-title">Artisanal Trail:</div>
+            <div>
+              The trail is nearly two and a half kilometers (2.35 km) and is
+              estimated at 47 minutes on foot. Departure/Arrival: Bab el
+              Kantra/Bardo
+            </div>
+            <div class="info-title">Stopovers: The Breach</div>
+            <div>
+              <b> To Visit: </b>El Kantra Bridge, one of the symbols from which
+              the city took its name "city of bridges," the Islamic Cultural
+              Center, the small square of Sidi Djeliss characterized by its
+              fountain, the Printing House of Muslim Scholars founded by Abd el
+              Hamid Benbadis, the madrasa, a masterpiece of neo-Moorish
+              architecture, the Benbadis Institute named after the founder,
+              Benbadis, the Grand Mosque, the city's first mosque from the
+              Hafsid era, Dar el-Bahri, Oussef, the Regional Theater, one of the
+              city's wonders, the Benacer Garden, the El Khalifa Cultural
+              Center, and the Bardo Copperware
+            </div>
+          </div>
+
+          <div id="green-info" class="hidden">
+            <div>
+              <b> Natural Trail (Bardo and Rhumel Gorges):</b> <br />
+              <b>Distance:</b> 1km <br /><b>Duration: </b>50min <br />
+              <b>Departure/Arrival: </b>Bardo Urban Park/Bab el Kentra <br />
+              <b>Places to Visit: </b>Bardo Urban Park, Devil's Bridge crossing
+              the wadi, Caesar's Bath dating from the Roman era, Salah Bey
+              Hammam, Beys' Garden, El Kantra Bridge, Train Station.
+            </div>
+          </div>
+
+          <div id="yellow-info" class="hidden">
+            <div>
+              <b> Picturesque Trail:</b> This is the city's picturesque trail,
+              which runs from Zighoud Yousef Boulevard overlooking the cliff,
+              passing along the Rhumel Gorge to Bardo Urban Park. This trail is
+              divided into two parts. <br />
+              <b>Distance: </b>3.090 km <br />
+              <b>Duration:</b> 1 hour 20 minutes <b>Start/Finish: </b>La
+              brèche/Bab el Kantra <br />
+              <b>Stops: </b> War Memorial <br />
+              <b>Places to Visit:</b> Zighoud Yousef Boulevard, the APC and
+              Wilaya of Constantine, masterpieces of European architecture,
+              Pigeon Cave, which dates back to prehistory, Sidi M'cid Suspension
+              Bridge, War Memorial, the highest point in the city, Cable car
+              crossing the Rhumel Wadi, Tatache Square, El Kantra Bridge, Train
+              Station. <br />
+              <b>Distance: </b>1,940km <br />
+              <b> Departure/Arrival: </b>La brèche/Bab el Kentra/Bardo
+              Stopovers: Kerikeri Square. <br />
+              <b>Places of Interest:</b> El Kantra Bridge, the medersa, a symbol
+              of protector-style architecture, Mellah Slimane Footbridge,
+              Archaeological Excavations (lower Souika), Sidi Rached Bridge, the
+              Kerikeri Square belvedere, Bardo Urban Park, Bardo Copperware. xx
+            </div>
+          </div>
+
+          <div id="blue-info" class="hidden">
+            <div>
+              <b> Palaces and Houses Tour: </b>Requires about 45 minutes on foot
+              <br />
+              <b>Departure/Arrival: </b> La brèche/Bardo <br />
+              <b> Stops:</b> Tatache Square, Kerikeri Square <br />
+              <b>To Visit:</b> Bey's Palace, a magnificent palace with three
+              gardens of typical Arab-Muslim character, Hassan Bey Mosque, Ben
+              Engluiez Bey House, Benbadis Family House, Salah Bey Residences,
+              Souk el Aser, El Kettani Mosque, a symbol of powerful
+              architecture, Zaouia Abd el-Rahman, Qsen Hammam, Rahbat Essouf,
+              Sidi Mimoun Mausoleum, the madrasa, Zaouia Ettidjania named after
+              the Ettidjania brotherhood (Tarîqa), Sidi Abd el Moumen Mosque,
+              Dar Daikha Bent el Bey, a typical example of an Ottoman house,
+              square Kerikeri, Bardo Urban Park, Bardo Dinanderies.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="card2"><h2>Card 02</h2></div>
+      <div class="container">
+        <div class="picture-container">
+          <img
+            src="../images/cards/2.jpg"
+            alt="Sample Landscape"
+            class="picture"
+          />
+          <!-- Markers will be added by JavaScript -->
+        </div>
+
+        <div class="description">
+          <div>
+            <div>
+              <b> Cirta:</b> <br />
+              A Canvas Where Civilizations Pulse Through Its Rocks** Cirta, the
+              "City of Hanging Bridges," shines like a gem that harbors within
+              its cliffs and valleys a rare human legacy. Every suspended bridge
+              carries a tale, and every stone whispers the history of nations
+              that once thrived: from the Romans in Tiddis, to the Ottomans in
+              Ahmed Bey Palace, all the way to the Islamic architecture of Emir
+              Abdelkader Mosque. Here, you traverse time as you wander through
+              its ancient markets, steadfast museums, and neighborhoods steeped
+              in the fragrance of centuries. Cirta is not merely a city of
+              bridges—it is an open-air museum where history grazes the sky, and
+              culture flows like a river, weaving through civilizations cradled
+              by the earth and the sun.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="card3"><h2>Card 03</h2></div>
+      <div class="container">
+        <div class="picture-container">
+          <img
+            src="../images/cards/3.jpg"
+            alt="Sample Landscape"
+            class="picture"
+          />
+          <!-- Markers will be added by JavaScript -->
+        </div>
+
+        <div class="description">
+          <div>
+            The Rock of Constantine was the cradle of one of the oldest cities
+            in the world, the ancient Cirta, capital of Numidia, and was the
+            scene of a succession of civilizations thereafter. This imposing
+            mass which supports the city rises to 664m at its highest point,
+            surrounded "by the Rhumel gorges with a length of 1800m and a depth
+            of 35m at the beginning, at Sidi Rached, the height of the cliffs
+            then increases rapidly to reach at the exit of the gorges nearly
+            200m".
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Cirtism</h3>
+          <p>
+            We are a premier travel company dedicated to creating unforgettable
+            experiences around Constantine. Our mission is to connect people
+            with the world's most beautiful places.
+          </p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#videos">Travel Videos</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Travel Street, Wander City
+          </p>
+          <p><i class="fas fa-phone"></i> +213 558 20 25 24 54</p>
+          <p><i class="fas fa-envelope"></i> info@cirtism.com</p>
+          <p><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</p>
+        </div>
+        <div class="footer-column">
+          <h3>Newsletter</h3>
+          <p>
+            Subscribe to our newsletter for travel tips, special offers, and
+            exclusive deals.
+          </p>
+          <form>
+            <input type="email" placeholder="Your Email" required />
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cirtism Travel. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script>
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Run animation check on scroll and on load
+      window.addEventListener("scroll", animateOnScroll);
+      window.addEventListener("load", animateOnScroll);
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const colorCircles = document.querySelectorAll(".color-circle");
+        const infoDisplay = document.querySelector(".info-display");
+        const defaultInfo = document.getElementById("default-info");
+        const pictureContainer = document.querySelector(".picture-container");
+
+        // Add markers to the picture
+        colorCircles.forEach((circle) => {
+          const position = circle.dataset.position.split(" ");
+          const marker = document.createElement("div");
+          marker.className = "marker";
+          marker.style.left = position[0];
+          marker.style.top = position[1];
+          marker.style.backgroundColor = circle.style.backgroundColor;
+          pictureContainer.appendChild(marker);
+
+          // Add click event to each circle
+          circle.addEventListener("click", function () {
+            // Hide all info sections
+            document.querySelectorAll(".info-display > div").forEach((div) => {
+              div.classList.add("hidden");
+            });
+
+            // Show the selected info
+            const infoId = circle.dataset.info;
+            document.getElementById(infoId).classList.remove("hidden");
+
+            // Highlight the clicked circle
+            colorCircles.forEach((c) => (c.style.border = "3px solid white"));
+            circle.style.border = "3px solid black";
+
+            // Animate the marker
+            const markers = document.querySelectorAll(".marker");
+            markers.forEach(
+              (m) => (m.style.transform = "translate(-50%, -50%) scale(1)")
+            );
+            const activeMarker = Array.from(markers).find(
+              (m) => m.style.backgroundColor === circle.style.backgroundColor
+            );
+            if (activeMarker) {
+              activeMarker.style.transform = "translate(-50%, -50%) scale(1.5)";
+            }
+          });
+        });
+
+        // Reset to default when clicking on the info display
+        infoDisplay.addEventListener("click", function () {
+          document.querySelectorAll(".info-display > div").forEach((div) => {
+            div.classList.add("hidden");
+          });
+          defaultInfo.classList.remove("hidden");
+          colorCircles.forEach((c) => (c.style.border = "3px solid white"));
+
+          // Reset markers
+          document.querySelectorAll(".marker").forEach((m) => {
+            m.style.transform = "translate(-50%, -50%) scale(1)";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
